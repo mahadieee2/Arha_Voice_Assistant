@@ -52,10 +52,10 @@ This project uses speech recognition and text-to-speech (TTS) to provide a hands
    pip install -r requirements.txt
    ```
 
-4. Run the JARVIS script:
+4. Run the ARHA script:
 
    ```bash
-   python jarvis.py
+   python arha.py
    ```
 
    
