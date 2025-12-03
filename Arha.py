@@ -12,6 +12,7 @@ import google.generativeai as genai
 
 
 
+
 # Logging configuration
 LOG_DIR = "logs"
 LOG_FILE_NAME = "application.log"
@@ -53,8 +54,6 @@ def speak(text):
     engine.runAndWait()
 
 
-speak("Hello my name is Arha")
-
 
 # This function recognize the speech and convert it to text 
 
@@ -95,6 +94,37 @@ def greeting():
 
 
 speak("I am Arha. Please tell me how may I help you today?")
+
+
+
+def play_music():
+    music_dir = "D:\Python Program\Arha_Voice_Assistant\music"   # <-- change this to your music folder
+    try:
+        songs = os.listdir(music_dir)
+        if songs:
+            random_song = random.choice(songs)
+            speak(f"Playing a random song sir: {random_song}")
+            os.startfile(os.path.join(music_dir, random_song))
+            logging.info(f"Playing music: {random_song}")
+        else:
+            speak("No music files found in your music directory.")
+    except Exception:
+        speak("Sorry sir, I could not find your music folder.")
+
+
+
+
+
+def gemini_model_response(user_input):
+    GEMINI_API_KEY = "AIzaSyCEA988TAwcEeZeKvD8aJGgEBKSP2leP_g"
+    genai.configure(api_key = GEMINI_API_KEY)
+    model = genai.GenerativeModel("gemini-2.5-flash")
+    prompt = f"Your name is ARHA, You act like ARHA. Answar the provided question in short, Question: {user_input}"
+    response = model.generate_content(prompt)
+    result = response.text
+
+    return result
+
 
 
 
@@ -199,9 +229,16 @@ while True:
         speak(results)
         logging.info("User requested information from Wikipedia.")
 
+
+
+
+
     
     elif "play music" in query or "music" in query:
         play_music()
+
+
+
 
 
 
@@ -210,9 +247,10 @@ while True:
         logging.info("User exited the program.")
         exit()
 
-    else: 
-        speak("I am sory, I can't help you with that.")
-        logging.info("User asked for an unsupported command.")
+    else:
+        response = gemini_model_response(query)
+        speak(response)
+        logging.info("User asked for others question")
 
 
 
