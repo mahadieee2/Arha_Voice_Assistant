@@ -12,7 +12,6 @@ import google.generativeai as genai
 
 
 
-
 # Logging configuration
 LOG_DIR = "logs"
 LOG_FILE_NAME = "application.log"
@@ -28,7 +27,6 @@ logging.basicConfig(
     level = logging.INFO
 
 )
-
 
 
 
@@ -113,8 +111,6 @@ def play_music():
 
 
 
-
-
 def gemini_model_response(user_input):
     GEMINI_API_KEY = "AIzaSyCEA988TAwcEeZeKvD8aJGgEBKSP2leP_g"
     genai.configure(api_key = GEMINI_API_KEY)
@@ -124,7 +120,6 @@ def gemini_model_response(user_input):
     result = response.text
 
     return result
-
 
 
 
@@ -229,17 +224,9 @@ while True:
         speak(results)
         logging.info("User requested information from Wikipedia.")
 
-
-
-
-
     
     elif "play music" in query or "music" in query:
         play_music()
-
-
-
-
 
 
     elif "exit" in query:

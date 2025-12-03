@@ -14,19 +14,38 @@ This project uses speech recognition and text-to-speech (TTS) to provide a hands
 
 - Time & Date announcements
 
+- Speech Recognition & Text-to-Speech
+
+- Smart Greeting System
+ 
+- Application & Website Automation
+
+- ARHA can open apps and websites using voice commands
+
+- ARHA can fetch a short summary from Wikipedia
+
+- Voice input using SpeechRecognition
+
+- Text-to-speech reply using pyttsx3
+
+- Smart time-based greetings
+
+- Open apps: Calculator, Notepad, CMD
+
+- Open websites: Google, YouTube, Facebook, GitHub, Google Calendar
+
 - Wikipedia search with spoken summary
 
-- Open websites like Google, Facebook, YouTube
+- AI-powered responses using Gemini 2.5 Flash
 
-- Play random music from a specified folder
+- Random music player from local folder
 
-- Open system applications: Calculator, Notepad, CMD
+- Small-talk abilities (name, creator, thank you, how are you)
 
-- Open Calendar (Google Calendar via browser)
+- Action logging system (saved in logs folder)
 
-- Tell jokes and respond to basic small talk
+- Safe exit command (“exit”
 
-- Exit gracefully with a voice command
 
 ## 💻 Requirements
 
