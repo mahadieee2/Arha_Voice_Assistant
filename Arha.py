@@ -7,6 +7,10 @@ import wikipedia
 import webbrowser
 import random
 import subprocess
+import google.generativeai as genai
+
+
+
 
 # Logging configuration
 LOG_DIR = "logs"
@@ -19,7 +23,7 @@ log_path = os.path.join(LOG_DIR,LOG_FILE_NAME)
 
 logging.basicConfig(
     filename=log_path,
-    format = "%(asctime)s - %(levelname)s - %(name)s - %(message)s",
+    format = "[ %(asctime)s ] %(name)s - %(levelname)s - %(message)s",
     level = logging.INFO
 
 )
