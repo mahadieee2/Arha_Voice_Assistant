@@ -44,7 +44,7 @@ This project uses speech recognition and text-to-speech (TTS) to provide a hands
 
 - Action logging system (saved in logs folder)
 
-- Safe exit command (“exit”
+- Safe exit command (“exit”)
 
 
 ## 💻 Requirements

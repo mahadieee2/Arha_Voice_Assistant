@@ -12,7 +12,7 @@ import google.generativeai as genai
 
 
 
-# Logging configuration
+#Logging configuration
 LOG_DIR = "logs"
 LOG_FILE_NAME = "application.log"
 
@@ -30,14 +30,14 @@ logging.basicConfig(
 
 
 
-# Activating voice from our system 
+#Activating voice from our system 
 engine = pyttsx3.init("sapi5") 
 engine.setProperty('rate', 170)
 voices = engine.getProperty("voices")
 engine.setProperty('voice', voices[1].id)
 
 
-# This is speack Function
+#This is speack Function
 
 def speak(text):
     """This function converts text to voice
@@ -53,7 +53,7 @@ def speak(text):
 
 
 
-# This function recognize the speech and convert it to text 
+#This function recognize the speech and convert it to text 
 
 def takeCommand():
     """This function takes command & recognize
@@ -112,7 +112,7 @@ def play_music():
 
 
 def gemini_model_response(user_input):
-    GEMINI_API_KEY = "AIzaSyCEA988TAwcEeZeKvD8aJGgEBKSP2leP_g"
+    GEMINI_API_KEY = "AIzaSyAK1n9JYmcoqA0xTkcpXJ7NHoqSvc8dM1I"
     genai.configure(api_key = GEMINI_API_KEY)
     model = genai.GenerativeModel("gemini-2.5-flash")
     prompt = f"Your name is ARHA, You act like ARHA. Answar the provided question in short, Question: {user_input}"
@@ -135,10 +135,10 @@ while True:
         logging.info("User asked for assistant's name.")
 
     elif "time" in query:
-        strTime = datetime.datetime.now().strftime()
+        strTime = datetime.datetime.now().strftime("%H:%M:%S")
         speak(f"Sir the time is {strTime}")
 
-     # Small talk
+     #Small talk
     elif "how are you" in query:
         speak("I am functioning at full capacity sir!")
         logging.info("User asked about assistant's well-being.")
@@ -158,35 +158,35 @@ while True:
         logging.info("User requested to open Google.")
 
     
-    # Calculator
+    #Calculator
     elif "open calculator" in query or "calculator" in query:
         speak("Opening calculator")
         subprocess.Popen("calc.exe")
         logging.info("User requested to open Calculator.")
 
     
-     # Notepad
+     #Notepad
     elif "open notepad" in query:
         speak("Opening Notepad")
         subprocess.Popen("notepad.exe")
         logging.info("User requested to open Notepad.")
 
     
-    # Command Prompt
+    #Command Prompt
     elif "open terminal" in query or "open cmd" in query:
         speak("Opening Command Prompt terminal")
         subprocess.Popen("cmd.exe")
         logging.info("User requested to open Command Prompt.")
 
     
-    # Calendar
+    #Calendar
     elif "open calendar" in query or "calendar" in query:
         speak("Opening Windows Calendar")
         webbrowser.open("https://calendar.google.com")
         logging.info("User requested to open Calendar.")
 
     
-    # YouTube search
+    #YouTube search
     elif "youtube" in query:
         speak("Opening YouTube for you.")
         query = query.replace("youtube", "")
@@ -205,7 +205,7 @@ while True:
         webbrowser.open("github.com")
         logging.info("User requested to open GitHub.")
 
-    # Jokes
+    #Jokes
     elif "joke" in query:
         jokes = [
             "Why don't programmers like nature? Too many bugs.",
